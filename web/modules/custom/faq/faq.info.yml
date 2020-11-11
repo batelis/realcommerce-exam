@@ -1,0 +1,5 @@
+name: 'Faq'
+type: module
+description: 'display faq, filter by texonomy'
+core: 8.x
+package: 'Custom'
