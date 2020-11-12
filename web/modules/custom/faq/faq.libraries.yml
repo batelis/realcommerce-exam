@@ -1,0 +1,9 @@
+faq:
+  version: 1.x
+  css:
+    layout:
+      css/faq.css: {}
+  js:
+    js/faq.js: {}
+  dependencies:
+    - core/jquery

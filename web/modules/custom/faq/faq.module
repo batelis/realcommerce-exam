@@ -26,10 +26,21 @@ function faq_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function faq_theme() {
+function faq_theme():array {
   return [
-    'faq' => [
-      'render element' => 'children',
+    'block_container' => [
+        'variables' => [ 'data' => null],
+        'template'  => 'block--faq-by-taxonomy'
     ],
+    'taxonomy_tab_component' => [
+      'template'  => 'taxonomy-tab-component'
+    ],
+    'taxonomy_faq_component'=>[
+      'template'  => 'taxonomy-faq-component'
+    ]
   ];
+}
+
+function faq_preprocess_node__page(array &$variables) : void {
+  $variables['#attached']['library'][] = 'faq/faq';
 }

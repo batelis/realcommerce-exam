@@ -1,0 +1,18 @@
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="heading-{{ key }}-{{ index }}">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{ key }}-{{ index }}"
+                aria-expanded="true" aria-controls="collapse-{{ key }}-{{ index }}">
+          {{ question.label }}
+        </button>
+      </h5>
+    </div>
+    <div id="collapse-{{ key }}-{{ index }}" class="collapse" aria-labelledby="heading-{{ key }}-{{ index }}"
+         data-parent="#accordion">
+      <div class="card-body">
+        {{ question.body.value|raw }}
+      </div>
+    </div>
+  </div>
+</div>

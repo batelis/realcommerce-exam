@@ -1,0 +1,44 @@
+<!-- Add you custom twig html here -->
+<div class=mx-auto">
+  <div class="row">
+    <div class="col">
+      <header class="text-center">
+        <h1> {{ 'Batel Israeli- DrupalExam' |t}}</h1>
+      </header>
+    </div>
+  </div>
+  <div class="row">
+  <nav class="nav nav-pills nav-fill mx-auto ">
+    {% for key,item in data.categories %}
+      {% include ('taxonomy-tab-component.html.twig') %}
+    {% endfor %}
+  </nav>
+  </div>
+  <div class="row">
+    {% for key,item in data.categories %}
+      <div class="col-12">
+    <div id="taxonomy-term-tab-{{ key }}" class="taxonomy-term-tab">
+      {% for index,question in item.related_faq %}
+        {% include ('taxonomy-faq-component.html.twig') %}
+      {% endfor %}
+    </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .taxonomy-term-tab{
+    display: none;
+  }
+  .nav-item.active h5{
+    color:red;
+  }
+
+  body{
+    text-align: right;
+  }
+  .nav.nav-pills{
+    width: 70%;
+  }
+</style>
